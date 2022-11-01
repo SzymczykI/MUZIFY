@@ -1,6 +1,6 @@
-# muzify
+# MUZIFY
 
-<h3>application for transferring music between users with an available music player</h3> 
+<h3>application for transferring music between users with music player</h3> 
 <p>Its main goal was to learn Vue.js</p>
 
 ## Recommended IDE Setup
@@ -56,4 +56,4 @@ npm run test:e2e
 ```sh
 npm run lint
 ```
-# MUZIFY
+
