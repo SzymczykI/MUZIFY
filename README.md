@@ -1,10 +1,11 @@
 # muzify
 
-This template should help get you started developing with Vue 3 in Vite.
+<h3>application for transferring music between users with an available music player</h3> 
+<p>Its main goal was to learn Vue.js</p>
 
 ## Recommended IDE Setup
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + 
 
 ## Customize configuration
 
