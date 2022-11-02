@@ -3,3 +3,8 @@ getters
 - accessible in all components
 - will only update if the stste changes
 - getter functions are required to return a value
+
+
+VALIDATION
+- vuelidate 
+- vee validate
