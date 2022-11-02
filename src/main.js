@@ -9,6 +9,7 @@ import "./assets/main.css";
 
 const app = createApp(App);
 
+//registering plugin
 app.use(createPinia());
 app.use(router);
 

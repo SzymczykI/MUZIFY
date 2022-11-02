@@ -4,7 +4,7 @@ a {
 
 /* text-yellow-500 */
 a:hover {
-  color: #f59e0b;
+  color: #EFD9AE;
   text-decoration: none;
 }
 
@@ -31,8 +31,8 @@ a:hover {
 
 .upload-dropbox.upload-dropbox-drag {
   color: #fff;
-  background-color: #20d862;
-  border-color: #20d862;
+  background-color: #ACEBC4;
+  border-color: #ACEBC4;
   border-style: solid;
 }
 
