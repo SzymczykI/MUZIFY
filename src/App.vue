@@ -5,7 +5,7 @@
   <section class="mb-4 py-40 md:py-64 text-white text-center relative">
     <div
       class="absolute inset-0 w-full h-full bg-cover bg-no-repeat bg-left sm:bg-center bg-local"
-      style="background-image: url(assets/img/header.png)"
+      style="background-image: url(assets/img/muzify.gif)"
     ></div>
   </section>
 
@@ -253,18 +253,18 @@
     </div>
   </div>
 
-  <app-auth />
+  <auth />
 </template>
 
 <script>
-import AppHeader from "@/components/AppHeader.vue";
-import AppAuth from "@/components/AppAuth.vue";
+import AppHeader from "@/components/Header.vue";
+import Auth from "@/components/Auth.vue";
 
 export default {
   name: "App",
   components: {
     AppHeader,
-    AppAuth,
+    Auth,
   },
 };
 </script>
