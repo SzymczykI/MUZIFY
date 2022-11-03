@@ -57,6 +57,11 @@ export default {
 
         return message;
       },
+      // below values are default so we do not need to specify them - just leraning purpose
+      validateOnBlur: true,
+      validateOnChange: true,
+      validateOnInput: false,
+      validateOnModelUpdate: true,
     });
   },
 };

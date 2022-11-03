@@ -8,3 +8,9 @@ getters
 VALIDATION
 - vuelidate 
 - vee validate
+
+When are inputs validated? 
+- after the change event.
+- If the v-model directive is applied to an input, when the model is changed. 
+- After the blur event.
+- After form submission.
