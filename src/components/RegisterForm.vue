@@ -70,6 +70,19 @@
       />
       <ErrorMessage class="text-red-600" name="confirm_password" />
     </div>
+    <!-- Type -->
+    <div class="mb-3">
+      <label class="inline-block mb-2">Account Type</label>
+      <vee-field
+        as="select"
+        name="type"
+        class="block w-full py-1.5 px-3 text-gray-800 border border-gray-300 transition duration-500 focus:outline-none focus:border-black rounded"
+      >
+        <option value="listener">Listener</option>
+        <option value="artist">Artist</option>
+      </vee-field>
+      <ErrorMessage class="text-red-600" name="type" />
+    </div>
     <!-- Country -->
     <div class="mb-3">
       <label class="inline-block mb-2">Country</label>
@@ -107,7 +120,7 @@
 </template>
 
 <script>
-import { auth, usersCollections } from "@/plugins/firebase";
+import { auth, usersCollection } from "@/plugins/firebase";
 import { createUserWithEmailAndPassword } from "@firebase/auth";
 import { addDoc } from "firebase/firestore";
 
@@ -122,6 +135,7 @@ export default {
         age: "required|min_value:18|max_value:100",
         password: "required|min:9|max:100|excluded:password",
         confirm_password: "passwords_mismatch:@password",
+        type: "required",
         country: "required|country_excluded:Antarctica",
         tos: "tos",
       },
@@ -154,11 +168,12 @@ export default {
         return;
       }
       try {
-        await addDoc(usersCollections, {
+        await addDoc(usersCollection, {
           name: values.name,
           email: values.email,
           age: values.age,
           country: values.country,
+          type: values.type,
         });
       } catch (error) {
         this.reg_in_submission = false;
