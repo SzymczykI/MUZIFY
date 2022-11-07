@@ -107,8 +107,9 @@
 </template>
 
 <script>
-import auth from "@/plugins/firebase";
+import { auth, usersCollections } from "@/plugins/firebase";
 import { createUserWithEmailAndPassword } from "@firebase/auth";
+import { addDoc } from "firebase/firestore";
 
 export default {
   name: "RegisterForm",
@@ -146,6 +147,19 @@ export default {
           values.email,
           values.password
         );
+      } catch (error) {
+        this.reg_in_submission = false;
+        this.reg_alert_variant = "bg-red-500";
+        this.reg_alert_msg = "An unexpected error occured. Please try later.";
+        return;
+      }
+      try {
+        await addDoc(usersCollections, {
+          name: values.name,
+          email: values.email,
+          age: values.age,
+          country: values.country,
+        });
       } catch (error) {
         this.reg_in_submission = false;
         this.reg_alert_variant = "bg-red-500";
