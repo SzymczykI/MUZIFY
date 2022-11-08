@@ -178,18 +178,19 @@
 </template>
 
 <script>
-import useUserStore from "@/stores/user";
+// import useUserStore from "@/stores/user";
 
 export default {
   name: "Menage",
-  beforeRouteEnter(to, from, next) {
-    const store = useUserStore();
+  //guard is not nessesary
+  // beforeRouteEnter(to, from, next) {
+  //   const store = useUserStore();
 
-    if (store.userLoggedIn) {
-      next();
-    } else {
-      next({ name: "home" });
-    }
-  },
+  //   if (store.userLoggedIn) {
+  //     next();
+  //   } else {
+  //     next({ name: "home" });
+  //   }
+  // },
 };
 </script>
