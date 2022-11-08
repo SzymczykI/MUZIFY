@@ -5,16 +5,27 @@ import Menage from "@/views/Menage.vue";
 
 const routes = [
   {
+    name: "home",
     path: "/",
     component: Home,
   },
   {
+    name: "about",
     path: "/about",
     component: About,
   },
   {
-    path: "/menage",
+    name: "menage",
+    path: "/menage-music",
     component: Menage,
+  },
+  {
+    path: "/menage",
+    redirect: { name: "menage" },
+  },
+  {
+    path: "/:catchAll(.*)*",
+    redirect: { name: "home" },
   },
 ];
 
