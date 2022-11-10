@@ -21,32 +21,17 @@
       </div>
       <hr class="my-6" />
       <!-- Progess Bars -->
-      <div class="mb-4">
+      <div class="mb-4" v-for="upload in uploads" :key="upload.name">
         <!-- File Name -->
-        <div class="font-bold text-sm">Just another song.mp3</div>
+        <div class="font-bold text-sm" :class="upload.text_class">
+          <i :class="upload.icon"></i>{{ upload.name }}
+        </div>
         <div class="flex h-4 overflow-hidden bg-gray-200 rounded">
           <!-- Inner Progress Bar -->
           <div
-            class="transition-all progress-bar bg-blue-400"
-            style="width: 75%"
-          ></div>
-        </div>
-      </div>
-      <div class="mb-4">
-        <div class="font-bold text-sm">Just another song.mp3</div>
-        <div class="flex h-4 overflow-hidden bg-gray-200 rounded">
-          <div
-            class="transition-all progress-bar bg-blue-400"
-            style="width: 35%"
-          ></div>
-        </div>
-      </div>
-      <div class="mb-4">
-        <div class="font-bold text-sm">Just another song.mp3</div>
-        <div class="flex h-4 overflow-hidden bg-gray-200 rounded">
-          <div
-            class="transition-all progress-bar bg-blue-400"
-            style="width: 55%"
+            class="transition-all progress-bar"
+            :class="upload.variant"
+            :style="{ width: upload.current_progress + '%' }"
           ></div>
         </div>
       </div>
@@ -56,13 +41,14 @@
 
 <script>
 import { storage } from "@/plugins/firebase";
-import { ref, uploadBytes } from "firebase/storage";
+import { ref, uploadBytesResumable } from "firebase/storage";
 
 export default {
   name: "Upload",
   data() {
     return {
       is_dragover: false,
+      uploads: [],
     };
   },
   methods: {
@@ -76,10 +62,38 @@ export default {
         }
 
         //good practice to have root reference separated from others
-        const storageRef = ref(storage);
-        console.log(storageRef);
         const songsRef = ref(storage, `songs/${file.name}`);
-        uploadBytes(songsRef, file);
+        const task = uploadBytesResumable(songsRef, file);
+
+        const uploadIndex =
+          this.uploads.push({
+            task,
+            current_progress: 0,
+            name: file.name,
+            variant: "bg-blue-500",
+            icon: "fas fa-spinner fa-spin",
+            text_class: "",
+          }) - 1;
+
+        task.on(
+          "state_changed",
+          (snapshot) => {
+            // Observe state change events such as progress, pause, and resume
+            // Get task progress, including the number of bytes uploaded and the total number of bytes to be uploaded
+            const progress =
+              (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+            console.log("Upload is " + progress + "% done");
+            this.uploads[uploadIndex].current_progress = progress;
+          },
+          (error) => {
+            // Handle unsuccessful uploads
+            console.log(error);
+          },
+          () => {
+            // Handle successful uploads on complete
+            // For instance, get the download URL: https://firebasestorage.googleapis.com/...
+          }
+        );
       });
 
       console.log(files);
