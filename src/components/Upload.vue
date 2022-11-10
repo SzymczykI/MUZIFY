@@ -55,6 +55,9 @@
 </template>
 
 <script>
+import { storage } from "@/plugins/firebase";
+import { ref, uploadBytes } from "firebase/storage";
+
 export default {
   name: "Upload",
   data() {
@@ -66,11 +69,17 @@ export default {
     upload($event) {
       this.is_dragover = false;
       //smart way to create array from object
-      const { files } = [...$event.dataTransfer.files];
+      const files = [...$event.dataTransfer.files];
       files.forEach((file) => {
-        if (file.type !== "audio/mp3") {
+        if (file.type !== "audio/mpeg") {
           return;
         }
+
+        //good practice to have root reference separated from others
+        const storageRef = ref(storage);
+        console.log(storageRef);
+        const songsRef = ref(storage, `songs/${file.name}`);
+        uploadBytes(songsRef, file);
       });
 
       console.log(files);
