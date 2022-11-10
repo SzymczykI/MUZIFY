@@ -15,7 +15,7 @@
         @dragover.prevent.stop="is_dragover = true"
         @dragenter.prevent.stop="is_dragover = true"
         @dragleave.prevent.stop="is_dragover = false"
-        @drop.prevent.stop="upload"
+        @drop.prevent.stop="upload($event)"
       >
         <h5>Drop your files here</h5>
       </div>
@@ -63,8 +63,17 @@ export default {
     };
   },
   methods: {
-    upload() {
+    upload($event) {
       this.is_dragover = false;
+      //smart way to create array from object
+      const { files } = [...$event.dataTransfer.files];
+      files.forEach((file) => {
+        if (file.type !== "audio/mp3") {
+          return;
+        }
+      });
+
+      console.log(files);
     },
   },
 };
