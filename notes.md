@@ -27,3 +27,15 @@ Actions
 Actions vs Components
 - define logic in components if the changes affect the component or it's children
 - Define logic in actions if the changes affect the store/state
+
+Refrences
+- An object that points to a location in app
+- Allows you to read/write references
+- Create new references 
+
+Snapshots 
+- An object that is copy of a location in your app
+- Read-only
+- Immutable
+
+References and snapshots can read the the data in the app. Snapshots are read-only but are memory efficient.
