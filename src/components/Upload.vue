@@ -88,15 +88,18 @@ export default {
           (error) => {
             // Handle unsuccessful uploads
             console.log(error);
+            this.uploads[uploadIndex].variant = "bg-red-400";
+            this.uploads[uploadIndex].icon = "fas fa-times";
+            this.uploads[uploadIndex].text_class = "text-red-400";
           },
           () => {
             // Handle successful uploads on complete
-            // For instance, get the download URL: https://firebasestorage.googleapis.com/...
+            this.uploads[uploadIndex].variant = "bg-green-400";
+            this.uploads[uploadIndex].icon = "fas fa-check";
+            this.uploads[uploadIndex].text_class = "text-green-400";
           }
         );
       });
-
-      console.log(files);
     },
   },
 };
