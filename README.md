@@ -1,17 +1,52 @@
 # MUZIFY
+Upload and share your music!
 
-<h3>application for transferring music between users with music player</h3> 
-<p>Its main goal was to learn Vue.js</p>
+## Table of Contents
+* [General Info](#general-information)
+* [Technologies Used](#technologies-used)
+* [Usage](#usage)
+* [Project Status](#project-status)
+* [Screenshots](#screenshots)
+* [Room for Improvement](#room-for-improvement)
+* [Setup](#setup)
 
-## Recommended IDE Setup
+
+## General Information
+Muzify is a web application for users to upload music and listen to it using the built-in player. Users can comment on songs, share them with others and creating lists. The main assumption of the project was to learn the Vue.js framework in practice.
+
+## Technologies Used
+- Vue.js
+- Firebase Auth, Firestore, Firebase Storage
+- Howler.js
+- Pinia
+- TailwindCSS
+
+## Usage
+ - uploading music
+ - lisening music by audio player
+ - adding comments to uploaded songs
+
+## Project Status
+Project is: _in progress_ 
+
+## Screenshot
+![Alt text](https://i.ibb.co/P5RKvyd/Zrzut-ekranu-2022-10-14-o-01-45-59.png "screen")
+
+## Room for improvement
+- creating personalized lists of songs
+- tagging songs
+
+
+## Setup
+### Recommended IDE Setup
 
 [VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + 
 
-## Customize configuration
+### Customize configuration
 
 See [Vite Configuration Reference](https://vitejs.dev/config/).
 
-## Project Setup
+### Project Setup
 
 ```sh
 npm install
