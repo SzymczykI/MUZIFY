@@ -30,7 +30,7 @@ Muzify is a web application for users to upload music and listen to it using the
 Project is: _in progress_ 
 
 ## Screenshot
-![Alt text](https://i.ibb.co/P5RKvyd/Zrzut-ekranu-2022-10-14-o-01-45-59.png "screen")
+![Alt text](https://github.com/SzymczykI/MUZIFY/blob/main/screenshot/screenshot.png "screen")
 
 ## Room for improvement
 - creating personalized lists of songs
