@@ -39,3 +39,7 @@ Snapshots
 - Immutable
 
 References and snapshots can read the the data in the app. Snapshots are read-only but are memory efficient.
+
+Query parameters vs Path Parameters
+- path parameters - should be used for returning a single resource or multiple resources.
+- query parameters - should be used for sorting/filterinf through data
