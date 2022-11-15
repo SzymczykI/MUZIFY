@@ -37,7 +37,7 @@ const routes = [
   {
     name: "song",
     path: "/song/:id",
-    component: Song
+    component: Song,
   },
   {
     path: "/:catchAll(.*)*",
