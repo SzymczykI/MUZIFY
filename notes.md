@@ -43,3 +43,19 @@ References and snapshots can read the the data in the app. Snapshots are read-on
 Query parameters vs Path Parameters
 - path parameters - should be used for returning a single resource or multiple resources.
 - query parameters - should be used for sorting/filterinf through data
+
+Custom Directives
+- can be global or local
+- lifecycle functions: 
+* beforeMount - called when the directive is first bound to the element and before parent component is mounted.
+* mounted - called when the directive is mounted to the document.
+* beforeUpdate - called before the directive is updated.
+* updated - called after the directive is updated.
+* beforeUnmount - called before a directive is unmounted from the document.
+* unmounted - called after a directive is unmounted from document. 
+
+hook arguments
+* el - the element the bindings sits on
+* binding - an object which contains the arguments that are passed into the hooks (readonly)
+* vnode - allows you to refer directly to the node in the virtual DOM if you need to (redonly)
+* prevNode - previous vnode object before the directive was updated. (applied to beforeUpdate and updated hooks only)
