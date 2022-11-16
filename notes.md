@@ -59,3 +59,6 @@ hook arguments
 * binding - an object which contains the arguments that are passed into the hooks (readonly)
 * vnode - allows you to refer directly to the node in the virtual DOM if you need to (redonly)
 * prevNode - previous vnode object before the directive was updated. (applied to beforeUpdate and updated hooks only)
+
+i18n internalization
+- process of translating app
