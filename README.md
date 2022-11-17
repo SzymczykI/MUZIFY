@@ -18,6 +18,7 @@ Muzify is a web application for users to upload music and listen to it using the
 - Vue.js
 - Firebase Auth, Firestore, Firebase Storage
 - Howler.js
+- i18n
 - Pinia
 - TailwindCSS
 
