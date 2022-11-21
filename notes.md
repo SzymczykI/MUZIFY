@@ -62,3 +62,8 @@ hook arguments
 
 i18n internalization
 - process of translating app
+
+PWA
+Service workers 
+- Js file that runs in the background
+limitations: unable to access the DOM, limited browser support
