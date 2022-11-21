@@ -67,3 +67,9 @@ PWA
 Service workers 
 - Js file that runs in the background
 limitations: unable to access the DOM, limited browser support
+
+Caching (Workbox - tool to implement)
+- concept where copies of data and assets are stored for faster delivery
+* caching strategies
+- Cache, then Network   (Client <=> Cache <=> Network)
+- Network, than Cache (Client <=> Network <=> Cache)
