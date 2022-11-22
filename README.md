@@ -21,6 +21,7 @@ Muzify is a web application for users to upload music and listen to it using the
 - i18n
 - Pinia
 - TailwindCSS
+- Caching
 
 ## Usage
  - uploading music
