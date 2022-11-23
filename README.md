@@ -1,6 +1,9 @@
 # MUZIFY
 Upload and share your music!
 
+# DEMO
+[demo](https://muzify.vercel.app);
+
 ## Table of Contents
 * [General Info](#general-information)
 * [Technologies Used](#technologies-used)
