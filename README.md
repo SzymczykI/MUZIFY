@@ -2,7 +2,7 @@
 Upload and share your music!
 
 # DEMO
-[demo](https://muzify.vercel.app);
+[life demo here](https://muzify.vercel.app)
 
 ## Table of Contents
 * [General Info](#general-information)
