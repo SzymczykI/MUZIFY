@@ -73,3 +73,16 @@ Caching (Workbox - tool to implement)
 * caching strategies
 - Cache, then Network   (Client <=> Cache <=> Network)
 - Network, than Cache (Client <=> Network <=> Cache)
+
+TESTING
+- Vitest, official  testing tool for Vite
+- Alternatives: Mocha, Jasmine, Jest
+
+why use a testing framework? 
+- generates a test report
+- helps with organizing tests
+- comes with functions for performing testing
+
+!things to know
+- does not run in the browser. Runs in node
+- Comes with its own environment built on top of JSDOM
